@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "Car.h"
+#import "Hybrid.h"
 
 @interface ViewController ()
 
@@ -17,7 +19,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    /*
+    // Do any additional setup after loading the view, typically from a nib.
+    Car *myCar = [[Car alloc] init]; // 1
+    [myCar printCarInfo]; // 2
+    [myCar initWithMake:@"Honda" model:@"Accord" year:2010 gallonsInTank:12.5f];
+    // 3
+    [myCar printCarInfo]; // 4
+    */
+    
+    // Hybrid
+    Hybrid *myHybrid= [[Hybrid alloc] init];
+    [myHybrid initWithMake:@"Toyota" model:@"Prius" year:2012
+             gallonsInTank:8.3f MPG:42.0f];
+    [myHybrid printCarInfo];
+    NSLog(@"Miles until empty: %0.2f",[myHybrid milesUntilEmpty]);
+
 }
 
 - (void)didReceiveMemoryWarning
